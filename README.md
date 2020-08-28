@@ -2,10 +2,12 @@
 
 Motto ?
 
-## Author
+## Authors
 Liam Mills - University of Sydney
 
 Bangshuo Zhu - University of Sydney
+
+Kim Nguyen - University of Sydney
 
 ## Contents
 
@@ -55,9 +57,7 @@ This solution is an pen-pal messaging platform, built on a React Native front-en
 ## Technology
 
 **Google Translate**
-- [Google Maps API Key](https://console.cloud.google.com/google/maps-apis/start)
-- [Google Maps Directions](https://developer.here.com/products/maps)
-- [Google Routing Geocoding](https://developer.here.com/products/routing)
+- [Google Translate API](https://www.npmjs.com/package/google-translate-api)
 
 **Auth0**
 - [Auth0 Universal Login](https://auth0.com/universal-login/)
