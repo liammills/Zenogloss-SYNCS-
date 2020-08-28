@@ -1,0 +1,12 @@
+{
+  "name": "Zenogloss",
+  "displayName": "Zenogloss",
+  "expo": {
+    "name": "Zenogloss",
+    "slug": "Zenogloss",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
