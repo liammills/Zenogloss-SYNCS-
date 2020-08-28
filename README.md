@@ -1,1 +1,1 @@
-# SYNCS-Hackathon
+# Zenogloss
