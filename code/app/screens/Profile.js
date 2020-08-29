@@ -3,6 +3,8 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
 import { LinearGradient } from 'expo-linear-gradient';
 import { AuthContext } from '../context';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { Avatar } from 'react-native-paper';
 
 import { AppLoading } from 'expo';
 import { useFonts } from 'expo-font';
@@ -28,6 +30,11 @@ export default function LoadingScreen() {
             height: '110%',
           }}
         />
+      <Avatar.Image 
+          source={require('../assets/profile_liam.jpg')}
+          size={200}
+          style={{backgroundColor:'transparent'}}
+          />
       <TouchableOpacity
       onPress={() => signOut()}>
         <LinearGradient

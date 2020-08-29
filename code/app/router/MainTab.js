@@ -23,7 +23,7 @@ export default MainTab = () => {
     initialRouteName="MatchStackScreen"
     activeColor="#EC1950"
     inactiveColor="#f4f4f4"
-    labeled = 'false'
+    labeled = {false}
     barStyle={{ backgroundColor: '#303030' }}
     >
       <Tab.Screen

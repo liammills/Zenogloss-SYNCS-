@@ -2,11 +2,13 @@ import * as React from 'react';
 import { Text, View, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 import { LinearGradient } from 'expo-linear-gradient';
-
+import { AuthContext } from '../context';
 import { AppLoading } from 'expo';
 import { useFonts } from 'expo-font';
 
 export default function Welcome ({ navigation }) {
+
+  const { signIn } = React.useContext(AuthContext)
 
   let [fontsLoaded] = useFonts({
     'Rubik-Regular': require('../assets/fonts/Rubik-Regular.ttf'),
@@ -48,16 +50,14 @@ export default function Welcome ({ navigation }) {
           </TouchableOpacity>
         </View>
 
-        <LinearGradient
-        colors={['rgba(236,25,80,0.7)', 'rgba(221,63,101,0.7)']}
-        style={{ padding: 15, alignItems: 'center', borderRadius: 30, width: 182, marginVertical: 35 }}>
-            <TouchableOpacity
-           style={styles.register}
-           onPress={() => navigation.push('SignIn')}>
-
+        <TouchableOpacity
+        onPress={() => signIn()}>
+          <LinearGradient
+          colors={['rgba(236,25,80,0.7)', 'rgba(221,63,101,0.7)']}
+          style={{ padding: 15, alignItems: 'center', borderRadius: 30, width: 182, marginVertical: 35 }}>
             <Text style={styles.text2}>Sign In</Text>
-            </TouchableOpacity>
-        </LinearGradient>
+          </LinearGradient>
+        </TouchableOpacity>
       </View>
    );
  }

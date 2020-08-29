@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     marginBottom: 25,
   },
   text1: {
-    fontFamily: 'Rubik-Light',
+    fontFamily: 'Rubik-Regular',
     fontSize: 26,
     color: '#f4f4f4'
   },

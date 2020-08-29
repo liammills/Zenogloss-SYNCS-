@@ -3,7 +3,6 @@ import { View, Text, StyleSheet, TextInput, Alert, TouchableOpacity, Image } fro
 import Constants from 'expo-constants';
 import { LinearGradient } from 'expo-linear-gradient';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-//import Icon from 'react-native-vector-icons/SimpleLineIcons';
 import { AppLoading } from 'expo';
 import { useFonts } from 'expo-font';
 
@@ -126,7 +125,7 @@ const styles = StyleSheet.create({
     borderColor: '#404040'
   },
   name: {
-    fontFamily: 'Rubik-Medium',
+    fontFamily: 'Rubik-Regular',
     fontSize: 24,
     fontWeight: '700',
     marginBottom: 8,

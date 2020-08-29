@@ -26,65 +26,71 @@ export default function Register () {
             height: '110%',
           }}
         />
-      <MaterialCommunityIcons name="account-circle" color={'#f4f4f4'} size={120} style={{margin: 4}}/>
-      <Text style={{color:'#5f87bd', textDecorationLine: 'underline'}}>Upload an image</Text>
+      <MaterialCommunityIcons name="account-circle" color={'#f4f4f4'} size={130} style={{margin: 4 }}/>
+      <Text style={{color:'#3DC0C7', textDecorationLine: 'underline'}}>Upload an image</Text>
       <View style={{margin:10, alignItems: 'center'}}>
       <TextInput
         style={styles.password}
         onChangeText={text => onChangePass(text)}
-        placeholder="first name"
+        placeholder="First name"
+        placeholderTextColor='#505050'
         autoCorrect={false}
       />
       <TextInput
         style={styles.password}
         onChangeText={text => onChangePass(text)}
-        placeholder="last name"
+        placeholder="Last name"
+        placeholderTextColor='#505050'
         autoCorrect={false}
       />
       <TextInput
         style={styles.password}
         onChangeText={text => onChangePass(text)}
-        placeholder="email"
-        autoCorrect={false}
-        autoCapitalize='none'
-      />
-      <TextInput
-        style={styles.password}
-        onChangeText={text => onChangePass(text)}
-        placeholder="confirm email"
+        placeholder="Email"
+        placeholderTextColor='#505050'
         autoCorrect={false}
         autoCapitalize='none'
       />
       <TextInput
         style={styles.password}
         onChangeText={text => onChangePass(text)}
-        placeholder="password"
+        placeholder="Confirm email"
+        placeholderTextColor='#505050'
         autoCorrect={false}
         autoCapitalize='none'
-        secureTextEntry
       />
       <TextInput
         style={styles.password}
         onChangeText={text => onChangePass(text)}
-        placeholder="confirm password"
+        placeholder="Password"
+        placeholderTextColor='#505050'
         autoCorrect={false}
         autoCapitalize='none'
         secureTextEntry
       />
-      <TouchableOpacity style={styles.password}>
+      <TextInput
+        style={styles.password}
+        onChangeText={text => onChangePass(text)}
+        placeholder="Confirm password"
+        placeholderTextColor='#505050'
+        autoCorrect={false}
+        autoCapitalize='none'
+        secureTextEntry
+      />
+      <TouchableOpacity style={styles.picker}>
             <Picker
               selectedValue={carModel}
               prompt='Main Vehicle'
               mode='dropdown'
-              style={{ position: 'relative', height: 40, width: 300, color: '#aaa' }}
+              style={{ position: 'relative', height: 40, width: 300, color: '#505050' }}
               onValueChange={value => setCarModel(value)}
               itemStyle={{ fontSize: 14 }}
             >
               <Picker.Item label="Nationality" value="" />
               <Picker.Item label="N/A" value="na" />
               <Picker.Item label="Australia" value="au" />
-              <Picker.Item label="Italy" value="it" />
               <Picker.Item label="China" value="ch" />
+              <Picker.Item label="Italy" value="it" />
               <Picker.Item label="United States" value="us" />
             </Picker>
           </TouchableOpacity>
@@ -122,7 +128,25 @@ const styles = StyleSheet.create({
       fontSize: 13
   },
   password: {
-    height: 36, width: 300, paddingLeft: 10, marginVertical: 6, backgroundColor: 'rgba(95, 135, 189,0.3)'
+    height: 36,
+    width: 300,
+    paddingLeft: 20,
+    marginVertical: 6,
+    backgroundColor: 'rgba(148,212,216,1)',
+    borderWidth:1,
+    borderColor: '#3DC0C7',
+    borderRadius:20
+  },
+  picker: {
+    height: 36,
+    width: 300,
+    paddingLeft: 5,
+    marginVertical: 6,
+    backgroundColor: 'rgba(148,212,216,1)',
+    borderWidth:1,
+    borderColor: '#3DC0C7',
+    borderRadius:20,
+    justifyContent: 'center'
     },
   text: {
     color: '#f4f4f4',
