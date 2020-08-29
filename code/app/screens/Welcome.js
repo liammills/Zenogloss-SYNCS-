@@ -10,7 +10,6 @@ export default function Welcome ({ navigation }) {
 
   let [fontsLoaded] = useFonts({
     'Rubik-Regular': require('../assets/fonts/Rubik-Regular.ttf'),
-    'Rubik-Medium': require('../assets/fonts/Rubik-Medium.ttf'),
     'Rubik-Light': require('../assets/fonts/Rubik-Light.ttf'),
   });
 
@@ -20,7 +19,7 @@ export default function Welcome ({ navigation }) {
     return (
       <View style={styles.container}>
         <LinearGradient
-            colors={['#EFEDE1', '#E4E0C9']}
+            colors={['#505050', '#404040']}
             style={{
               position: 'absolute',
               left: 0,
@@ -38,25 +37,25 @@ export default function Welcome ({ navigation }) {
         </Text>
 
         <View>
-          <Text style={styles.normalFont}>don't have an account ?</Text>
+          <Text style={styles.normalFont}>Don't have an account ?</Text>
           <TouchableOpacity
           onPress={() => navigation.push('Register')}>
             <LinearGradient
             colors={['#EC1950', '#DD3F65']}
             style={{ padding: 15, alignItems: 'center', borderRadius: 30, width: 308 }}>
-              <Text style={styles.text}>register</Text>
+              <Text style={styles.text}>Register</Text>
           </LinearGradient>
           </TouchableOpacity>
         </View>
 
         <LinearGradient
-        colors={['rgba(236,25,80,0.6)', 'rgba(221,63,101,0.6)']}
+        colors={['rgba(236,25,80,0.7)', 'rgba(221,63,101,0.7)']}
         style={{ padding: 15, alignItems: 'center', borderRadius: 30, width: 182, marginVertical: 35 }}>
             <TouchableOpacity
            style={styles.register}
-           onPress={() => navigation.push('Login')}>
+           onPress={() => navigation.push('SignIn')}>
 
-            <Text style={styles.text2}>sign in</Text>
+            <Text style={styles.text2}>Sign In</Text>
             </TouchableOpacity>
         </LinearGradient>
       </View>
@@ -77,26 +76,26 @@ const styles = StyleSheet.create({
     margin: 16,
     fontSize: 48,
     textAlign: 'center',
-    color: '#606060',
+    color: '#f4f4f4',
     fontFamily: 'Rubik-Regular',
-    paddingBottom: 20
+    paddingBottom: 28
   },
   normalFont: {
     fontSize: 12,
     fontWeight: '200',
-    color: '#404040',
+    color: '#f4f4f4',
     paddingRight: 20,
     marginLeft: 25,
     marginBottom: 3
   },
   text: {
-    color: 'white',
+    color: '#f4f4f4',
     fontFamily: 'Rubik-Regular',
     fontSize: 24,
     fontWeight: '200',
   },
   text2: {
-    color: '#404040',
+    color: '#f4f4f4',
     fontFamily: 'Rubik-Light',
     fontSize: 20,
     fontWeight: '200',
