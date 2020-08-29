@@ -1,8 +1,7 @@
 import React from 'react';
 
-import Login from '../screens/Login';
-import Register from '../screens/Register';
-import Welcome from '../screens/Welcome';
+import NewUser from '../screens/NewUser';
+import MainTab from './MainTab';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -10,8 +9,7 @@ const MainStack = createStackNavigator();
 
 export default MainStackScreen = () => (
  <MainStack.Navigator initialRouteName="Welcome">
-   <MainStack.Screen name="Welcome" component={Welcome} options={{headerShown:false}}/>
-   <MainStack.Screen name="Login" component={Login} options={{headerShown:false}}/>
-   <MainStack.Screen name="Register" component={Register} />
+   <MainStack.Screen name="NewUser" component={NewUser} options={{headerShown:false}}/>
+   <MainStack.Screen name="MainTab" component={MainTab} options={{headerShown:false}}/>
  </MainStack.Navigator>
 );

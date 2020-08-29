@@ -39,14 +39,14 @@ const App = () => {
   }
 
   return (
-  //  <AuthContext.Provider value={authContext}>
+    <AuthContext.Provider value={authContext}>
       <NavigationContainer>
         {userToken ? (
-          <AuthStackScreen />) : (
-            <MainStackScreen />
+          <MainStackScreen />) : (
+            <AuthStackScreen />
           )}
       </NavigationContainer>
-  //  </AuthContext.Provider>
+    </AuthContext.Provider>
   );
 
 };

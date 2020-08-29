@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity, TextInput, CheckBox, Picker } from 'react-native';
 import { AuthContext } from '../context';
-
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Register () {
-  const { registerProvider, registerDriver } = React.useContext(AuthContext)
+  const { register } = React.useContext(AuthContext)
 
   const [username, onChangeUser] = React.useState('username');
   const [password, onChangePass] = React.useState('password');
@@ -14,6 +14,17 @@ export default function Register () {
 
   return (
     <View style={styles.container}>
+      <LinearGradient
+          // Background Linear Gradient
+          colors={['#EFEDE1', '#E4E0C9']}
+          style={{
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            top: 0,
+            height: '110%',
+          }}
+        />
       <Image
         style={{height:100, width:100, margin: 4}}
         source={require('../assets/logo.png')}
@@ -71,46 +82,23 @@ export default function Register () {
               onValueChange={value => setCarModel(value)}
               itemStyle={{ fontSize: 14 }}
             >
-              <Picker.Item label="Main Vehicle" value="" />
+              <Picker.Item label="Nationality" value="" />
               <Picker.Item label="N/A" value="na" />
-              <Picker.Item label="Tesla Model S" value="tesla-s" />
-              <Picker.Item label="Tesla Model 3" value="tesla-3" />
-              <Picker.Item label="Tesla Model X" value="tesla-x" />
-              <Picker.Item label="Tesla Model Y" value="tesla-y" />
+              <Picker.Item label="Australia" value="au" />
+              <Picker.Item label="Italy" value="it" />
+              <Picker.Item label="China" value="ch" />
+              <Picker.Item label="United States" value="us" />
             </Picker>
           </TouchableOpacity>
-      <View style={styles.checkboxContainer}>
-        <View style={styles.checkboxIndividual}>
-        <CheckBox
-          value={isDriver}
-          onValueChange={setIsDriver}
-          style={styles.checkbox}
-        />
-        <Text style={{color: '#5f87bd'}}>Driver</Text>
-        </View>
-        <View style={styles.checkboxIndividual}>
-        <CheckBox
-          value={isProvider}
-          onValueChange={setIsProvider}
-          style={styles.checkbox}
-        />
-        <Text style={{color: '#5f87bd'}}>Provider</Text>
-        </View>
-      </View>
-      <View style={{flexDirection: 'row'}}>
-          {isDriver &&
-        <TouchableOpacity style={styles.login} onPress={() => {console.log([username,password]), registerDriver()}}>
-          <Text style={styles.loginText}>
-            Login as Driver
-          </Text>
-        </TouchableOpacity>}
-        {isProvider &&
-        <TouchableOpacity style={styles.login} onPress={() => registerProvider()}>
-          <Text style={styles.loginText}>
-            Login as Provider
-          </Text>
-        </TouchableOpacity>}
-        </View>
+
+          <TouchableOpacity
+         onPress={() => register()}>
+            <LinearGradient
+            colors={['#EC1950', '#DD3F65']}
+            style={{ padding: 15, alignItems: 'center', borderRadius: 30, width: 308 }}>
+              <Text style={styles.text}>register</Text>
+          </LinearGradient>
+          </TouchableOpacity>
       </View>
     </View>
   );
@@ -122,6 +110,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 15,
     margin: 5,
+    flex: 1
   },
   normalFont: {
     fontSize: 12,
@@ -165,17 +154,4 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 45,
   },
-  checkboxContainer: {
-    flexDirection: "row",
-    marginTop: 2
-  },
-  checkbox: {
-    alignSelf: "center",
-    color: '#5f87bd'
-  },
-  checkboxIndividual: {
-    marginHorizontal: 40,
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
 });

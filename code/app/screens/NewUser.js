@@ -10,9 +10,17 @@ export default function Welcome ({ navigation }) {
 
   let [fontsLoaded] = useFonts({
     'Rubik-Regular': require('../assets/fonts/Rubik-Regular.ttf'),
-    'Rubik-Medium': require('../assets/fonts/Rubik-Medium.ttf'),
     'Rubik-Light': require('../assets/fonts/Rubik-Light.ttf'),
+    'EBGaramond-Regular': require('../assets/fonts/EBGaramond-Regular.ttf'),
   });
+
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+  }, [])
 
     if (!fontsLoaded) {
     return <AppLoading />;
@@ -20,6 +28,7 @@ export default function Welcome ({ navigation }) {
     return (
       <View style={styles.container}>
         <LinearGradient
+            // Background Linear Gradient
             colors={['#EFEDE1', '#E4E0C9']}
             style={{
               position: 'absolute',
@@ -29,36 +38,26 @@ export default function Welcome ({ navigation }) {
               height: '110%',
             }}
           />
-        <Image
-            style={styles.logo}
-            source={require('../assets/logo.png')}
-          />
-        <Text style={styles.title}>
-          zenogloss
-        </Text>
+        <Text style={{fontFamily:'EBGaramond-Regular', color: '#404040', fontSize: 36 }}>
+          Welcome,
+         </Text>
 
-        <View>
-          <Text style={styles.normalFont}>don't have an account ?</Text>
-          <TouchableOpacity
-          onPress={() => navigation.push('Register')}>
-            <LinearGradient
-            colors={['#EC1950', '#DD3F65']}
-            style={{ padding: 15, alignItems: 'center', borderRadius: 30, width: 308 }}>
-              <Text style={styles.text}>register</Text>
-          </LinearGradient>
-          </TouchableOpacity>
-        </View>
+           <Text style={{fontFamily:'Rubik-Light', fontSize: 60, color: 'purple'}}>
+             Liam
+            </Text>
 
+        {!isLoading &&
         <LinearGradient
-        colors={['rgba(236,25,80,0.6)', 'rgba(221,63,101,0.6)']}
-        style={{ padding: 15, alignItems: 'center', borderRadius: 30, width: 182, marginVertical: 35 }}>
+        colors={['rgba(236,25,80,1)', 'rgba(221,63,101,1)']}
+        style={{ padding: 15, alignItems: 'center', borderRadius: 30, width: 302, marginTop: 80 }}>
             <TouchableOpacity
            style={styles.register}
-           onPress={() => navigation.push('Login')}>
+           onPress={() => navigation.push('MainTab')}>
 
-            <Text style={styles.text2}>sign in</Text>
+            <Text style={styles.text}>Find a Pal</Text>
             </TouchableOpacity>
         </LinearGradient>
+      }
       </View>
    );
  }
@@ -91,14 +90,8 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'white',
-    fontFamily: 'Rubik-Regular',
-    fontSize: 24,
-    fontWeight: '200',
-  },
-  text2: {
-    color: '#404040',
     fontFamily: 'Rubik-Light',
-    fontSize: 20,
+    fontSize: 26,
     fontWeight: '200',
   },
   logo: {
