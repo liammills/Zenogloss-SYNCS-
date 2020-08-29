@@ -19,7 +19,7 @@ export default function Welcome ({ navigation }) {
     return (
       <View style={styles.container}>
         <LinearGradient
-            colors={['#505050', '#404040']}
+            colors={['#404040', '#303030']}
             style={{
               position: 'absolute',
               left: 0,

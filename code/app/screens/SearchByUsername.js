@@ -8,7 +8,7 @@ export default function LoadingScreen() {
     <View style={styles.container}>
       <LinearGradient
           // Background Linear Gradient
-          colors={['#EFEDE1', '#E4E0C9']}
+          colors={['#404040', '#303030']}
           style={{
             position: 'absolute',
             left: 0,

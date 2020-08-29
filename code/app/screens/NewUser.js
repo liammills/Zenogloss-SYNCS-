@@ -29,7 +29,7 @@ export default function Welcome ({ navigation }) {
       <View style={styles.container}>
         <LinearGradient
             // Background Linear Gradient
-            colors={['#EFEDE1', '#E4E0C9']}
+            colors={['#404040', '#303030']}
             style={{
               position: 'absolute',
               left: 0,
@@ -38,11 +38,11 @@ export default function Welcome ({ navigation }) {
               height: '110%',
             }}
           />
-        <Text style={{fontFamily:'EBGaramond-Regular', color: '#404040', fontSize: 36 }}>
+        <Text style={{fontFamily:'EBGaramond-Regular', color: '#f4f4f4', fontSize: 36 }}>
           Welcome,
          </Text>
 
-           <Text style={{fontFamily:'Rubik-Light', fontSize: 60, color: 'purple'}}>
+           <Text style={{fontFamily:'Rubik-Light', fontSize: 60, color: '#DD1EFE'}}>
              Liam
             </Text>
 

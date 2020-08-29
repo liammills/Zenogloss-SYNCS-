@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { View, Text, StyleSheet, TextInput, Alert, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Alert, TouchableOpacity, Image } from 'react-native';
 import Constants from 'expo-constants';
 import { LinearGradient } from 'expo-linear-gradient';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+//import Icon from 'react-native-vector-icons/SimpleLineIcons';
 import { AppLoading } from 'expo';
 import { useFonts } from 'expo-font';
 
@@ -48,7 +49,7 @@ export default function Inbox({ navigation }) {
     <View style={styles.container}>
       <LinearGradient
           // Background Linear Gradient
-          colors={['#EFEDE1', '#E4E0C9']}
+          colors={['#303030', '#303030']}
           style={{
             position: 'absolute',
             left: 0,
@@ -57,7 +58,7 @@ export default function Inbox({ navigation }) {
             height: '110%',
           }}
         />
-        <View style={{flexDirection: 'row', marginVertical: 6, position: 'absolute', top: 50}}>
+        <View style={{flexDirection: 'row', marginVertical: 6, position: 'absolute', top: 42}}>
           <TextInput
             style={styles.search}
             onChangeText={text => onChangeSearch(text)}
@@ -66,22 +67,38 @@ export default function Inbox({ navigation }) {
           <Icon.Button
           name="sort"
           backgroundColor='transparent'
-          color= "#404040"
+          color= "#f4f4f4"
           size={30}
           onPress={() => Alert.alert('Sort by...')}
           />
         </View>
+
         <LinearGradient
         colors={['rgba(236,25,80,1)', 'rgba(221,63,101,1)']}
-        style={{ padding: 15, alignItems: 'center', borderRadius: 30, width: '90%', marginVertical: 10, marginTop: 90}}>
+        style={{ paddingVertical: 12, alignItems: 'center', borderRadius: 30, width: '90%', marginVertical: 10, marginTop: 90}}>
             <TouchableOpacity
-           style={styles.register}
            onPress={() => navigation.push('Messages')}>
-           <View>
-              <Text style={styles.name}>Bang Zhu</Text>
-              <Text style={styles.lastMessage}>Last message: 3h ago</Text>
+           <View style={{flexDirection: 'row' }}>
+               <View style={{flexDirection: 'column', marginLeft: 15}}>
+                <Text style={styles.name}>Bang Zhu</Text>
+                <Text style={styles.lastMessage}>Last message: 3h ago</Text>
+              </View>
+              <View style={{flexDirection: 'column', marginLeft: 60}}>
+                <Icon.Button
+                name="send"
+                backgroundColor='transparent'
+                color= "#202020"
+                style={{marginLeft: 24, marginBottom: 3}}
+                size={28}
+                onPress={() => Alert.alert('New message...')}
+                />
+                <Image
+                    style={styles.logo}
+                    source={require('../assets/flags/au.png')}
+                  />
+              </View>
             </View>
-            </TouchableOpacity>
+          </TouchableOpacity>
         </LinearGradient>
     </View>
   );
@@ -111,10 +128,18 @@ const styles = StyleSheet.create({
   name: {
     fontFamily: 'Rubik-Medium',
     fontSize: 24,
-    fontWeight: '700'
+    fontWeight: '700',
+    marginBottom: 8,
+    color: '#202020',
   },
   lastMessage: {
     fontFamily: 'Rubik-Regular',
     fontSize: 18,
+    color: '#202020',
+  },
+  logo: {
+    width: 30,
+    height: 30,
+    marginLeft: 25,
   },
 });

@@ -20,11 +20,11 @@ const ProfileStack = createStackNavigator();
 export default MainTab = () => {
   return (
     <Tab.Navigator
-    initialRouteName="MatchStack"
+    initialRouteName="MatchStackScreen"
     activeColor="#EC1950"
-    inactiveColor="#404040"
+    inactiveColor="#f4f4f4"
     labeled = 'false'
-    barStyle={{ backgroundColor: '#E4E0C9' }}
+    barStyle={{ backgroundColor: '#303030' }}
     >
       <Tab.Screen
         name="InboxStackScreen"

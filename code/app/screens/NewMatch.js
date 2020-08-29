@@ -2,6 +2,7 @@ import * as React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
 import { LinearGradient } from 'expo-linear-gradient';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { AppLoading } from 'expo';
 import { useFonts } from 'expo-font';
@@ -15,7 +16,7 @@ export default function NewMatch({navigation}) {
   return (
     <View style={styles.container}>
       <LinearGradient
-          colors={['#EFEDE1', '#E4E0C9']}
+          colors={['#404040', '#303030']}
           style={{
             position: 'absolute',
             left: 0,
@@ -24,11 +25,11 @@ export default function NewMatch({navigation}) {
             height: '110%',
           }}
         />
+        <MaterialCommunityIcons name="help-circle-outline" color={'#f4f4f4'} size={32} style={{position: 'absolute', top: 30, left: 15}}/>
         <Image
             style={styles.logo}
             source={require('../assets/penpals.png')}
           />
-
           <TouchableOpacity
          onPress={() => navigation.push('RandomMatch')}>
             <LinearGradient
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
     padding: 8,
   },
   logo: {
-    width: 250,
+    width: 290,
     height: 250,
     marginBottom: 25,
   },
