@@ -1,41 +1,69 @@
 import * as React from 'react';
 import { Text, View, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
+import { LinearGradient } from 'expo-linear-gradient';
 
-export default class Welcome extends React.Component {
-  render() {
+import { AppLoading } from 'expo';
+import { useFonts } from 'expo-font';
+
+export default function Welcome ({ navigation }) {
+
+  let [fontsLoaded] = useFonts({
+    'Rubik-Regular': require('../assets/fonts/Rubik-Regular.ttf'),
+  });
+
+    if (!fontsLoaded) {
+    return <AppLoading />;
+  } else {
     return (
       <View style={styles.container}>
+        <LinearGradient
+            // Background Linear Gradient
+            colors={['#EFEDE1', '#E4E0C9']}
+            style={{
+              position: 'absolute',
+              left: 0,
+              right: 0,
+              top: 0,
+              height: '110%',
+            }}
+          />
         <Image
             style={styles.logo}
             source={require('../assets/logo.png')}
           />
         <Text style={styles.title}>
-          Welcome to Rechar.gd!
+          zenogloss
         </Text>
-        <View style={{height: 0.5, width: 250, backgroundColor: '#100A31', margin: 20}} />
-        <TouchableOpacity style={styles.login1} onPress={() => this.props.navigation.push('LoginForm')}>
-          <Text style={styles.text}>Login</Text>
-        </TouchableOpacity>
         <View>
-          <Text style={styles.normalFont}>Don't have an account?</Text>
-          <TouchableOpacity style={styles.login2} onPress={() => this.props.navigation.push('Register')}>
-          <Text style={[styles.text]}>
-          Register
-          </Text>
-          </TouchableOpacity>
+          <Text style={styles.normalFont}>don't have an account ?</Text>
+            <LinearGradient
+            colors={['#EC1950', '#DD3F65']}
+            style={{ padding: 15, alignItems: 'center', borderRadius: 30, width: 308 }}>
+                <TouchableOpacity
+               style={styles.register}
+               onPress={() => navigation.push('Register')}>
+
+                <Text style={styles.text}>register</Text>
+                </TouchableOpacity>
+            </LinearGradient>
         </View>
-        <View style={styles.container}>
-          <TouchableOpacity style={styles.login3} onPress={() => this.props.navigation.push('UseAsGuest')}>
-          <Text style={[styles.text1]}>
-          Use as Guest
-          </Text>
-        </TouchableOpacity>
-        </View>
+
+        <LinearGradient
+        colors={['rgba(236,25,80,0.6)', 'rgba(221,63,101,0.6)']}
+        style={{ padding: 15, alignItems: 'center', borderRadius: 30, width: 182, marginVertical: 35 }}>
+            <TouchableOpacity
+           style={styles.register}
+           onPress={() => navigation.push('Login')}>
+
+            <Text style={styles.text2}>sign in</Text>
+            </TouchableOpacity>
+        </LinearGradient>
       </View>
    );
-  }
+ }
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -44,74 +72,38 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingTop: Constants.statusBarHeight,
     backgroundColor: '#ecf0f1',
-    padding: 8,
   },
   title: {
-    margin: 12,
-    fontSize: 18,
-    fontWeight: 'bold',
+    margin: 16,
+    fontSize: 48,
     textAlign: 'center',
-    color: '#2F578D',
+    color: '#606060',
+    fontFamily: 'Rubik-Regular',
+    paddingBottom: 20
   },
   normalFont: {
     fontSize: 12,
     fontWeight: '200',
-    textAlign: 'center',
-    color: 'rgba(0,0,0,0.5)',
-    marginTop: 20,
+    color: '#404040',
+    paddingRight: 20,
+    marginLeft: 25,
+    marginBottom: 3
   },
   text: {
     color: 'white',
+    fontFamily: 'Rubik-Regular',
+    fontSize: 24,
+    fontWeight: '200',
   },
-  text1: {
-    color: 'white',
-    fontSize: 12,
-  },
-  login1: {
-    margin: 10,
-    fontSize: 16,
-    textAlign: 'center',
-    color: '#ecf0f1',
-    backgroundColor: '#2F578D',
-    borderWidth: 1,
-    borderColor: '#ecf0f1',
-    borderRadius: 100,
-    fontFamily: 'Arial',
-    paddingVertical: 8,
-    paddingHorizontal: 45,
-  },
-  login2: {
-    marginTop: 7,
-    marginBottom: 0,
-    fontSize: 14,
-    textAlign: 'center',
-    color: '#fff',
-    backgroundColor: '#2F578D',
-    borderWidth: 1,
-    borderColor: '#ecf0f1',
-    borderRadius: 20,
-    fontFamily: 'Arial',
-    paddingVertical: 8,
-    paddingHorizontal: 45,
-  },
-  login3: {
-    marginTop: 7,
-    marginBottom: 0,
-    fontSize: 12,
-    textAlign: 'center',
-    color: '#fff',
-    backgroundColor: '#5f87bd',
-    borderWidth: 1,
-    borderColor: '#ecf0f1',
-    borderRadius: 100,
-    fontFamily: 'Arial',
-    paddingVertical: 7,
-    paddingHorizontal: 36,
+  text2: {
+    color: '#404040',
+    fontFamily: 'Rubik-Regular',
+    fontSize: 20,
+    fontWeight: '200',
   },
   logo: {
     width: 200,
-    height: 190,
-    marginBottom: 5,
-    marginTop: 30,
+    height: 180,
+    marginTop: 25,
   },
 });
