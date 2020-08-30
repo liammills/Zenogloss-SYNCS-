@@ -1,6 +1,6 @@
 # Zenogloss
 
-Motto ?
+Communication and Correspondance
 
 ## Authors
 Liam Mills - University of Sydney
