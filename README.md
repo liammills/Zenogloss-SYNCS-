@@ -11,24 +11,13 @@ Kim Nguyen - University of Sydney
 
 ## Contents
 
-1. [Overview](#overview)
-2. [The idea](#the-idea)
-3. [How it works](#how-it-works)
-4. [Diagrams](#diagrams)
-5. [Technology](#technology)
-6. [Getting started](#getting-started)
-7. [Resources](#resources)
-8. [License](#license)
-
-## Overview
-
-### What's the problem?
-
-@Kim
-
-### How can technology help?
-
-@Kim
+1. [The idea](#the-idea)
+2. [How it works](#how-it-works)
+3. [Diagrams](#diagrams)
+4. [Technology](#technology)
+5. [Getting started](#getting-started)
+6. [Resources](#resources)
+7. [License](#license)
 
 ## The idea
 
