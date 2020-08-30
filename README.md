@@ -15,11 +15,10 @@ Kim Nguyen - University of Sydney
 2. [The idea](#the-idea)
 3. [How it works](#how-it-works)
 4. [Diagrams](#diagrams)
-5. [Documents](#documents)
-6. [Technology](#technology)
-7. [Getting started](#getting-started)
-8. [Resources](#resources)
-9. [License](#license)
+5. [Technology](#technology)
+6. [Getting started](#getting-started)
+7. [Resources](#resources)
+8. [License](#license)
 
 ## Overview
 
@@ -33,26 +32,17 @@ Kim Nguyen - University of Sydney
 
 ## The idea
 
-@Kim
+We’ve found that most messenger app services are direct messaging in the form of text bubbles. This tends to facilitate quick, brief chats. It is usually quite difficult and awkward to maintain a lengthy conversation, and the nature of direct messaging pressures either party to make a rushed response. On the other hand, emails are usually used for long-form correspondence, but they are clunky by nature, and usually have unintuitive mobile apps that make them frustrating to use. We are aiming at the niche that exists in the space between these two extremes. There is a previously unrealized method of communication that is intuitive and streamlined – akin to direct messaging – but retains the more thorough correspondence of email. Where direct messaging is too shallow, but email/snail mail too slow, Zenogloss can thrive. This middle ground of communication would be the perfect form to take advantage of for communication between pen pals. A pen pal – that is, someone closer to a stranger than a friend (currently) – is someone with whom deeper conversation would be required in order to form a bond. However, this is a relationship that would also benefit from the brevity provided by a streamlined messaging service. After all, not every day is interesting, and sometimes all that is needed is a quick update. With Zenogloss, the best of both worlds awaits!
 
 ## How it works
 
-@Kim
+For those who wish to create new cross-cultural friendships, it is possible to choose a random match. Potential pals with comparable interests are matched, and may begin their correspondence at their leisure and in their native languages. For those who wish to chat with known friends, it is also possible to add contacts by username. Just write and the translation service does the rest!
 
 ## Diagrams
 
 ![Zenogloss architecture diagram](/images/architecture-diagram.png)
 
-This solution is an pen-pal messaging platform, built on a React Native front-end and Node back-end, and integrating the Google Translate API and Auth0.
-
-1. The user launches the mobile app and ...
-1. The user can ...
-1. The user can login securely, and trust that their details are in good hands.
-1. The user can ...
-
-## Documents
-
-@Kim
+This solution is an pen-pal messaging platform, built on a React Native front-end and Node back-end, and integrating the Google Translate RN API, RN Gifted Chat and Auth0.
 
 ## Technology
 

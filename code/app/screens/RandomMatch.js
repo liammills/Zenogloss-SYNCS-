@@ -9,7 +9,7 @@ import { Avatar } from 'react-native-paper';
 
 import LoadingScreen2 from './LoadingScreen2';
 
-export default function RandomMatch() {
+export default function RandomMatch({ navigation }) {
   const [isLoading, setIsLoading] = React.useState(true);
 
   let [fontsLoaded] = useFonts({
@@ -63,7 +63,7 @@ export default function RandomMatch() {
           Bio
         </Text>
         <Text style={{fontFamily: 'Rubik-Light', fontSize: 20, color:'#f4f4f4', textAlign:'left', width: '85%', marginTop: 3}}>
-         Hi! I’m from France. I love to eat and travel. Let’s chat :)
+         Hi! I’m from Toulouse in France. I love to eat and travel. Let’s chat :)
         </Text>
         <TouchableOpacity
           onPress={() => navigation.push('NewLetter')}>

@@ -48,7 +48,7 @@ export default function Inbox({ navigation }) {
     <View style={styles.container}>
       <LinearGradient
           // Background Linear Gradient
-          colors={['#303030', '#303030']}
+          colors={['#404040', '#303030']}
           style={{
             position: 'absolute',
             left: 0,
@@ -76,24 +76,52 @@ export default function Inbox({ navigation }) {
         colors={['rgba(236,25,80,1)', 'rgba(221,63,101,1)']}
         style={{ paddingVertical: 12, alignItems: 'center', borderRadius: 30, width: '90%', marginVertical: 10, marginTop: 90}}>
             <TouchableOpacity
-           onPress={() => navigation.push('Messages')}>
+           onPress={() => navigation.push('NewLetter')}>
            <View style={{flexDirection: 'row' }}>
                <View style={{flexDirection: 'column', marginLeft: 15}}>
                 <Text style={styles.name}>Bang Zhu</Text>
-                <Text style={styles.lastMessage}>Last message: 3h ago</Text>
+                <Text style={styles.lastMessage}>Last message: Just now</Text>
               </View>
               <View style={{flexDirection: 'column', marginLeft: 60}}>
                 <Icon.Button
-                name="send"
+                name="create"
                 backgroundColor='transparent'
-                color= "#202020"
+                color= "black"
                 style={{marginLeft: 24, marginBottom: 3}}
                 size={28}
                 onPress={() => Alert.alert('New message...')}
                 />
                 <Image
                     style={styles.logo}
-                    source={require('../assets/flags/au.png')}
+                    source={require('../assets/flags/fr.png')}
+                  />
+              </View>
+            </View>
+          </TouchableOpacity>
+        </LinearGradient>
+
+        <LinearGradient
+        colors={['#3DC0C7', '#4AB4BA']}
+        style={{ paddingVertical: 12, alignItems: 'center', borderRadius: 30, width: '90%', marginVertical: 10, marginTop: 10}}>
+            <TouchableOpacity
+           onPress={() => navigation.push('Messages')}>
+           <View style={{flexDirection: 'row' }}>
+               <View style={{flexDirection: 'column', marginLeft: 15}}>
+                <Text style={styles.name}>Kim Nguyen</Text>
+                <Text style={styles.lastMessage}>Last message: 3d ago</Text>
+              </View>
+              <View style={{flexDirection: 'column', marginLeft: 60}}>
+                <Icon.Button
+                name="create"
+                backgroundColor='transparent'
+                color= "black"
+                style={{marginLeft: 24, marginBottom: 3}}
+                size={28}
+                onPress={() => Alert.alert('New message...')}
+                />
+                <Image
+                    style={styles.logo}
+                    source={require('../assets/flags/mx.png')}
                   />
               </View>
             </View>
@@ -140,5 +168,8 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
     marginLeft: 25,
+    borderWidth: 1,
+    borderColor: '#404040',
+    borderRadius: 50,
   },
 });

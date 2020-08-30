@@ -11,7 +11,7 @@ export default function Welcome ({ navigation }) {
   let [fontsLoaded] = useFonts({
     'Rubik-Regular': require('../assets/fonts/Rubik-Regular.ttf'),
     'Rubik-Light': require('../assets/fonts/Rubik-Light.ttf'),
-    'EBGaramond-Regular': require('../assets/fonts/EBGaramond-Regular.ttf'),
+    'EBGaramond-Bold': require('../assets/fonts/EBGaramond-Bold.ttf'),
   });
 
   const [isLoading, setIsLoading] = React.useState(true);
@@ -38,7 +38,7 @@ export default function Welcome ({ navigation }) {
               height: '110%',
             }}
           />
-        <Text style={{fontFamily:'EBGaramond-Regular', color: '#f4f4f4', fontSize: 36 }}>
+        <Text style={{fontFamily:'EBGaramond-Bold', color: '#f4f4f4', fontSize: 36 }}>
           Welcome,
          </Text>
 

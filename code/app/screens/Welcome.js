@@ -53,7 +53,7 @@ export default function Welcome ({ navigation }) {
         <TouchableOpacity
         onPress={() => signIn()}>
           <LinearGradient
-          colors={['rgba(236,25,80,0.7)', 'rgba(221,63,101,0.7)']}
+          colors={['rgba(236,25,80,0.8)', 'rgba(221,63,101,0.8)']}
           style={{ padding: 15, alignItems: 'center', borderRadius: 30, width: 182, marginVertical: 35 }}>
             <Text style={styles.text2}>Sign In</Text>
           </LinearGradient>

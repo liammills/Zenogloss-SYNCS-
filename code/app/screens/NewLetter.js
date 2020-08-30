@@ -8,84 +8,7 @@ import { useFonts } from 'expo-font';
 
 var translate = require('react-node-google-translate');
 
-const messages = [
-  {
-    _id: 1,
-    text: 'Hey Liam, how are you?',
-    createdAt: new Date(),
-    user: {
-      _id: 2,
-      name: 'Kim Nguyen',
-      avatar: 'https://placeimg.com/140/140/any',
-      language: 'es'
-    },
-  },
-  {
-    _id: 2,
-    text: '[x] I am very well, whereabouts are you from in Mexico?',
-    createdAt: new Date(),
-    user: {
-      _id: 1,
-    },
-  },
-  {
-    _id: 3,
-    text: 'I live in Guadalajara - it is an\nawesome city.\nWhat about you?',
-    createdAt: new Date(),
-    user: {
-      _id: 2,
-      name: 'Kim Nguyen',
-      avatar: 'https://placeimg.com/140/140/any',
-      language: 'es',
-    },
-  },
-  {
-    _id: 4,
-    text: '[x] I live in Sydney.',
-    createdAt: new Date(),
-    user: {
-      _id: 1,
-    },
-  },
-  {
-    _id: 5,
-    text: '[x] I have always wanted to go to Mexico but always thought it would be hard because of the language barrier.',
-    createdAt: new Date(),
-    user: {
-      _id: 1,
-    },
-  },
-  {
-    _id: 7,
-    text: 'Maybe we can get over that\nlanguage barrier by talking\nto one another.',
-    createdAt: new Date(),
-    user: {
-      _id: 2,
-      name: 'Kim Nguyen',
-      avatar: 'https://placeimg.com/140/140/any',
-      language: 'es',
-    },
-  },
-  {
-    _id: 8,
-    text: '[x] That would be awesome!',
-    createdAt: new Date(),
-    user: {
-      _id: 1,
-    },
-  },
-  {
-    _id: 9,
-    text: "Let's start talking then.\nWhat are your hobbies?",
-    createdAt: new Date(),
-    user: {
-      _id: 2,
-      name: 'Kim Nguyen',
-      avatar: 'https://placeimg.com/140/140/any',
-      language: 'es',
-    },
-  },
-];
+//const messages = [];
 
 const OtherMessageText = (props) => {
   const {
@@ -99,6 +22,7 @@ const OtherMessageText = (props) => {
     source: 'en',
     target: 'es'
   }, function(result) {
+    console.log(result);
     currentMessage.text = result;
   })}
 
@@ -107,10 +31,11 @@ const OtherMessageText = (props) => {
       source: 'es',
       target: 'en'
     }, function(result) {
+      console.log(result);
       currentMessage.text = result;
     })}
 
-  !checked ? translateToEnglish(currentMessage.text) : translateToSpanish(currentMessage.text)
+  checked ? translateToEnglish(currentMessage.text) : translateToSpanish(currentMessage.text)
 
   return (
     <View style={styles.checkboxView}>
@@ -156,6 +81,18 @@ const MyMessageText = (props) => {
 }
 
 export default Messages = (props) => {
+  const [messages, setMessages] = useState([messages]);
+
+  const prefix = '[x] ';
+
+  useEffect(() => {
+    setMessages([
+    ])
+  }, [])
+  
+  const onSend = useCallback((messages = []) => {
+    setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
+  }, [])
 
   let [fontsLoaded] = useFonts({
     'Rubik-Regular': require('../assets/fonts/Rubik-Regular.ttf'),
@@ -230,7 +167,7 @@ export default Messages = (props) => {
         textInputStyle={{
           fontFamily: 'Rubik-Regular',
         }}
-        onSend={messages => {onSend(messages)}}
+        onSend={messages => {messages[0].text = prefix.concat(messages[0].text), onSend(messages)}}
         user={{
           _id: 1,
         }}
