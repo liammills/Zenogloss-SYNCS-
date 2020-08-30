@@ -1,6 +1,6 @@
 # Zenogloss
 
-Communication and Correspondance
+Global communication, global connection
 
 ## Authors
 Liam Mills - University of Sydney
