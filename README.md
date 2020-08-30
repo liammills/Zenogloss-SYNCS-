@@ -1,6 +1,6 @@
 # Zenogloss
 
-Global communication, global connection
+Come to life, Come to cultural conversations.
 
 ## Authors
 Liam Mills - University of Sydney
