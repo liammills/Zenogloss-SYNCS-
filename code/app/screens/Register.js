@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity, TextInput, CheckBox, Picker } from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity, TextInput, Picker } from 'react-native';
 import { AuthContext } from '../context';
 import { LinearGradient } from 'expo-linear-gradient';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -10,8 +10,6 @@ export default function Register () {
   const [username, onChangeUser] = React.useState('username');
   const [password, onChangePass] = React.useState('password');
   const [carModel, setCarModel] = React.useState('');
-  const [isDriver, setIsDriver] = React.useState(false);
-  const [isProvider, setIsProvider] = React.useState(false);
 
   return (
     <View style={styles.container}>
@@ -20,10 +18,11 @@ export default function Register () {
           colors={['#404040', '#303030']}
           style={{
             position: 'absolute',
-            left: 0,
+            left: -5,
             right: 0,
-            top: 0,
+            top: -10,
             height: '110%',
+            width: '120%',
           }}
         />
       <MaterialCommunityIcons name="account-circle" color={'#f4f4f4'} size={130} style={{margin: 4 }}/>
