@@ -7,8 +7,6 @@ Liam Mills - University of Sydney
 
 Bangshuo Zhu - University of Sydney
 
-Kim Nguyen - University of Sydney
-
 ## Contents
 
 1. [The idea](#the-idea)
